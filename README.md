@@ -9,7 +9,7 @@ pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:4000](http://localhost:4000).
 
 ## Links
 
@@ -22,6 +22,6 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
 docker build -t lenga-gateway .
-docker run -p 3000:3000 lenga-gateway
+docker run -p 4000:4000 lenga-gateway
 ```
 # lenga-gateway

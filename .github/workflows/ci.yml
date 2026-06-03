@@ -121,7 +121,7 @@ jobs:
 
             docker stop "$CONTAINER_NAME" 2>/dev/null || true
             docker rm "$CONTAINER_NAME" 2>/dev/null || true
-            docker run -d --name "$CONTAINER_NAME" -p 3000:3000 --restart unless-stopped \
+            docker run -d --name "$CONTAINER_NAME" -p 4000:4000 --restart unless-stopped \
               ${DEPLOY_DOCKER_RUN_EXTRA_ARGS:-} "${IMAGE_NAME}:${IMAGE_TAG}"
 
             KEEP_IMAGES="${IMAGE_NAME}:${IMAGE_TAG}"
