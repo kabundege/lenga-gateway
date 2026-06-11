@@ -1,21 +1,15 @@
 import { TraderAccordion } from "@/components/TraderAccordion";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_HEADING_LINES,
+  HEADING_LINE_COLORS,
+} from "@/constants/traderTopics";
 
 type TraderTopicsSectionProps = {
   headingLines?: readonly string[];
   description?: string;
   className?: string;
 };
-
-const DEFAULT_HEADING_LINES = ["Learn.", "Save.", "Grow."] as const;
-
-const DEFAULT_DESCRIPTION =
-  "Practical financial skills that help market traders plan smarter, save steadily, and elevate their businesses.";
-
-const HEADING_LINE_COLORS = [
-  "text-purple-900",
-  "text-purple-700",
-  "text-purple-500",
-] as const;
 
 export function TraderTopicsSection({
   headingLines = DEFAULT_HEADING_LINES,
@@ -24,9 +18,9 @@ export function TraderTopicsSection({
 }: TraderTopicsSectionProps) {
   return (
     <div
-      className={`w-full h-full px-6 pb-6 bg-purple-100 md:px-10 ${className}`.trim()}
+      className={`w-full h-full items-center justify-center flex flex-1 px-6 py-10 bg-purple-100 md:px-10 ${className}`.trim()}
     >
-      <div className="mx-auto flex h-full w-full max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:gap-12">
+      <div className="mx-auto flex flex-grow w-full max-w-7xl flex-col gap-8 lg:flex-row lg:items-center lg:gap-12">
         <div className="shrink-0 lg:max-w-xs">
           <h2 className="text-3xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-4xl md:text-5xl">
             {headingLines.map((line, index) => (

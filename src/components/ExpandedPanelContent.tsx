@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { PANEL_REVEAL_DELAY_MS } from "@/constants/traderTopics";
+
 export type ExpandedPanelContentProps = {
   isActive: boolean;
   title: string;
@@ -10,13 +12,11 @@ export type ExpandedPanelContentProps = {
   className?: string;
 };
 
-const DEFAULT_REVEAL_DELAY_MS = 250;
-
 export function ExpandedPanelContent({
   isActive,
   title,
   description,
-  revealDelayMs = DEFAULT_REVEAL_DELAY_MS,
+  revealDelayMs = PANEL_REVEAL_DELAY_MS,
   className = "",
 }: ExpandedPanelContentProps) {
   const [visible, setVisible] = useState(false);
