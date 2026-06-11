@@ -36,18 +36,32 @@ const CARD_LAYOUT = [
   },
 ] as const;
 
+const uncdfLogo = "/logos/uncdf_logo.png";
+const euLogo = "/logos/eu_logo.png";
+const govLogo = "/logos/gov_logo.png";
+const iomLogo = "/logos/iom_logo.png";
+const unctadLogo = "/logos/unctad_logo.png";
+const sdgFundLogo = "/logos/sdg_fund_logo.webp";
+const tradeCenterLogo = "/logos/trade_center_logo.png";
+
+const partnersLogos = [
+  { src: euLogo, alt: "EU" },
+  { src: govLogo, alt: "Gov" },
+  { src: iomLogo, alt: "IOC" },
+  { src: unctadLogo, alt: "UNCTAD" },
+  { src: sdgFundLogo, alt: "SDG Fund" },
+  { src: tradeCenterLogo, alt: "Trade Center" },
+];
+
 const ANALYTICS_URL = "https://analytics.lenga.site";
 const CONTENT_URL = "https://api.lenga.site";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-svh flex-col overflow-hidden bg-[#f5f5f5]">
+    <section className="relative flex h-screen flex-col overflow-hidden bg-[#f5f5f5]">
       <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 md:px-10 md:py-8">
-        <h1 className="text-lg font-bold tracking-tight md:text-xl">Lenga</h1>
-
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted md:text-sm">
-          Learning made simple
-        </p>
+        <h1 className="text-lg font-bold tracking-tight md:text-3xl">Lenga</h1>
+        <Image alt="UNCDF" width={60} height={60} src={uncdfLogo} />
       </header>
 
       <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col items-center px-6 pb-8 pt-2 text-center md:px-10 md:pb-10 md:pt-4">
@@ -69,39 +83,31 @@ export function HeroSection() {
             href={ANALYTICS_URL}
             className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
-            System analytics
+            User analytics
           </Link>
           <Link
             href={CONTENT_URL}
             className="inline-flex items-center justify-center rounded-full border border-border bg-surface px-8 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-neutral-50"
           >
-            Manage lessons &amp; content
+            Content Management
           </Link>
         </div>
       </div>
 
-      <div className="relative mt-6 flex w-full transform scale-[1.0] flex-1 items-end justify-center md:mt-8">
-        <div className="flex items-end justify-center gap-1.5 pb-4 sm:gap-2 md:gap-3 lg:gap-10">
-          {TRADER_IMAGES.map((image, index) => {
-            const layout = CARD_LAYOUT[index];
+      <div className="bg-gray-200 h-full w-full">
+        <div className="container mx-auto bg-red-500 h-full w-full"></div>
+      </div>
 
-            return (
-              <div
-                key={image.src}
-                className={`relative aspect-[2.4/5] w-[40vw] min-w-[80px] max-w-[200px] shrink-0 transform overflow-hidden rounded-xl border border-white/70 bg-surface shadow-[0_20px_50px_rgba(0,0,0,0.12)] sm:max-w-[240px] sm:rounded-2xl md:max-w-[270px] lg:max-w-[300px] ${layout.rotate} ${layout.translate} ${layout.z}`}
-              >
-                <Image
-                  fill
-                  src={image.src}
-                  alt={image.alt}
-                  priority={index < 2}
-                  className="object-cover"
-                  sizes="(max-width: 640px) 22vw, (max-width: 1024px) 24vw, 260px"
-                />
-              </div>
-            );
-          })}
-        </div>
+      <div className="container mx-auto flex w-full py-5 transform items-center justify-between gap-5">
+        {partnersLogos.map((logo) => (
+          <Image
+            width={100}
+            height={100}
+            key={logo.src}
+            src={logo.src}
+            alt={logo.alt}
+          />
+        ))}
       </div>
     </section>
   );
