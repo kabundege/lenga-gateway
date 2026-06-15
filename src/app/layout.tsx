@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import "./globals.css";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Lenga helps program teams deliver lessons, track learner progress, and share results that matter."
+        />
+      </Head>
       <body className={`${geistSans.variable} antialiased`}>{children}</body>
     </html>
   );

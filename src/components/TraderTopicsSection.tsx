@@ -4,6 +4,7 @@ import {
   DEFAULT_HEADING_LINES,
   HEADING_LINE_COLORS,
 } from "@/constants/traderTopics";
+import Link from "next/link";
 
 type TraderTopicsSectionProps = {
   headingLines?: readonly string[];
@@ -36,9 +37,15 @@ export function TraderTopicsSection({
               </span>
             ))}
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+          <p className="my-4 text-sm leading-relaxed text-muted sm:text-base">
             {description}
           </p>
+          <Link
+            href="https://expo.dev/artifacts/eas/cSq9fCWR5wRbFRM4teDxHx.apk"
+            className="inline-flex items-center justify-center text-purple-800 font-bold border border-purple-400 rounded-full bg-background px-8 py-3.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            Download App
+          </Link>
         </div>
 
         <div className="min-w-0 flex-1">
