@@ -41,7 +41,7 @@ export function TraderTopicsSection({
             {description}
           </p>
           <Link
-            href="https://expo.dev/artifacts/eas/cSq9fCWR5wRbFRM4teDxHx.apk"
+            href="https://expo.dev/artifacts/eas/M8BPn7vvNeLcpAHEEqlEeyeqeOMaXwSGLEcNADRlIdE.apk"
             className="inline-flex items-center justify-center text-purple-800 font-bold border border-purple-400 rounded-full bg-background px-8 py-3.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
           >
             Download App
